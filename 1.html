@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	</head>
+
+<body><center>
+
+<h1> 나의 cpz 지수는? </h1>
+<form name = "frm7">
+	작성글 수:  <input type = "text" size = "8" name = "A">
+	댓글 수 : <input type = "text" size = "8" name = "B">
+	방문 수 :  <input type = "text" size = "8" name = "C">
+	가입 주수: <input type = "text" size = "8" name = "D">
+	<br><br><br>
+<input type = "button" value = "cpz 계산" onclick = "cal()">
+	<br><br>
+	<h2> cpz 지수 : <input type = "text" size = "8" name = "CPZ"> </h2>
+	<br>
+	cpz 지수는 본인이 몇 마리의 침팬치만큼 냄새를 풍기는지를 측정하는 척도입니다.
+</form>
+
+<script>
+function cal()
+{
+	if(frm7.A.value=="")
+	{
+	alert("작성글 수를 입력하시오");
+	frm7.A.focus();
+	}
+	else if(frm7.B.value=="")
+	{
+	alert("댓글 수를 입력하시오");
+	frm7.B.focus();
+	}
+	else if(frm7.C.value=="")
+	{
+	alert("댓글 수를 입력하시오");
+	frm7.C.focus();
+	}
+	else if(frm7.D.value=="")
+	{
+	alert("댓글 수를 입력하시오");
+	frm7.D.focus();
+	}
+	else
+	{
+		A = eval(frm7.A.value);
+		B = eval(frm7.B.value);
+		C = eval(frm7.C.value);
+		D = eval(frm7.D.value);
+		t = A + Math.sqrt(B);
+		l = Math.log(C+D) - Math.log(D);
+		n = Math.pow(l,3);
+		frm7.CPZ.value=t*n/28924.094346325044;
+		frm7.CPZ.disabled=true;
+	}
+}
+
+</script>
+
+	
+</body>
+</html>
+	
